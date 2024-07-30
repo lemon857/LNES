@@ -13,7 +13,7 @@ public:
     {
         N = 0, V, Unuse, B, D, I, Z, C
     };
-    
+
     cpu();
     ~cpu();
 
@@ -21,12 +21,14 @@ public:
     u8 get_flag(flag f);
 
 private:
-    u16 ProgCounter;
-    u16 StackPointer;
-    u8 Accum;
-    u8 IndX;
-    u8 IndY;
-    u8 StatusReg;
+    void init();
+
+    u16 prog_counter;
+    u16 stack_pointer;
+    u8 accum;
+    u8 index_X;
+    u8 index_Y;
+    u8 status_register;
 };
 
 #endif // _CPU_HPP_

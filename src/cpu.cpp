@@ -1,15 +1,28 @@
 #include "cpu.hpp"
 
+cpu::cpu()
+{
+    init();
+}
+
 void cpu::set_flag(flag f, u8 val)
 {
-    u8 tmp = 1;
-    tmp << (7 - (u8)f);
-    StatusReg |= tmp;
+    val << (7 - f);
+    status_register |= val;
 }
 
 u8 cpu::get_flag(flag f)
 {   
-    u8 tmp = StatusReg;
-    tmp >> (7 - (u8)f);
+    u8 tmp = status_register;
+    tmp >> (7 - f);
     return tmp & 1;
+}
+
+void cpu::init()
+{
+    accum = index_X = index_Y = 0;
+    status_register = 0;
+    set_flag(Unuse, 1);
+    prog_counter = 0xFFFC;
+    stack_pointer = 0x0100;
 }
