@@ -26,3 +26,16 @@ void cpu::init()
     prog_counter = 0xFFFC;
     stack_pointer = 0x0100;
 }
+
+void cpu::opcode_handle(u8 opcode)
+{
+    switch (opcode)
+    {
+    case ORA_IMM: {
+
+    } break;
+    
+    default:
+        break;
+    }
+}
