@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED On)
 set(CMAKE_CXX_EXTENSIONS Off)
 
 add_executable(${PROJECT_NAME}
-    src/main.cpp)
+    src/main.cpp
+    src/cpu.cpp
+    include/cpu.hpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC include)
