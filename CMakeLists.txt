@@ -14,6 +14,8 @@ add_executable(${PROJECT_NAME}
     src/main.cpp
     include/mem.hpp
     src/cpu.cpp
-    include/cpu.hpp)
+    include/cpu.hpp
+    src/bus.cpp
+    include/bus.hpp)
 
 target_include_directories(${PROJECT_NAME} PUBLIC include)
