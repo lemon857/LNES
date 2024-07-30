@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 3.20 FATAL_ERROR)
 
 set(PROJECT_NAME LNES)
 
+project(${PROJECT_NAME})
+
 set(CMAKE_CXX_COMPILER, "g++")
 
 set(CMAKE_CXX_STANDARD 17)
