@@ -32,7 +32,7 @@ void cpu::opcode_handle(u8 opcode)
     switch (opcode)
     {
     case ORA_IMM: {
-
+        
     } break;
     
     default:

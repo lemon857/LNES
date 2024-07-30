@@ -12,6 +12,7 @@ set(CMAKE_CXX_EXTENSIONS Off)
 
 add_executable(${PROJECT_NAME}
     src/main.cpp
+    include/mem.hpp
     src/cpu.cpp
     include/cpu.hpp)
 
