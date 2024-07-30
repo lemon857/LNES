@@ -9,8 +9,16 @@ typedef unsigned int u32;
 class cpu
 {   
 public:
+    enum flag
+    {
+        N = 0, V, Unuse, B, D, I, Z, C
+    };
+    
     cpu();
     ~cpu();
+
+    void set_flag(flag f, u8 val);
+    u8 get_flag(flag f);
 
 private:
     u16 ProgCounter;
