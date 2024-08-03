@@ -1,20 +1,27 @@
 #include "cpu.hpp"
 
+#include "bus.hpp"
+
 cpu::cpu()
 {
     init();
 }
 
+cpu::~cpu()
+{
+
+}
+
 void cpu::set_flag(flag f, u8 val)
 {
-    val << (7 - f);
+    val = val << (7 - static_cast<int>(f));
     status_register |= val;
 }
 
 u8 cpu::get_flag(flag f)
 {   
     u8 tmp = status_register;
-    tmp >> (7 - f);
+    tmp = tmp >> (7 - static_cast<int>(f));
     return tmp & 1;
 }
 
