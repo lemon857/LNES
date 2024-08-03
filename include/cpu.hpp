@@ -22,7 +22,14 @@ private:
     void init();
 
     void opcode_handle(u8 opcode);
-   
+
+    u8 get_byte(u16 addr);
+
+    void set_byte(u16 addr, u8 value);
+
+    u8 fetch_byte();
+    
+    void update_flags_reg(u8 reg);
 
     u16 prog_counter;
     u16 stack_pointer;
@@ -57,9 +64,7 @@ private:
     LSR_IMP = 0x4A, LSR_ZP = 0x46, LSR_ZPX = 0x56,                                 LSR_ABS = 0x4E, LSR_ABX = 0x5E,
     ASL_IMP = 0x0A, ASL_ZP = 0x06, ASL_ZPX = 0x16,                                 ASL_ABS = 0x0E, ASL_ABX = 0x1E,
     JSR_ABS = 0x20, JMP_ABS = 0x4C, JMP_IND = 0x6C, BIT_ZP = 0x24, BIT_ABS = 0x2C, BPL_REL = 0x10, BMI_REL = 0x30, BVC_REL = 0x50, BVS_REL = 0x70,
-    BCC_REL = 0x90, BCS_REL = 0xB0, BNE_REL = 0xD0, BEQ_REL = 0xF0,
-    
-    ;
+    BCC_REL = 0x90, BCS_REL = 0xB0, BNE_REL = 0xD0, BEQ_REL = 0xF0;
 };
 
 #endif // _CPU_HPP_
