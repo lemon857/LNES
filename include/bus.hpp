@@ -6,18 +6,18 @@
 class bus
 {
 public:
-    bus() = delete;
-    bus(bus&&) = delete;
-    bus operator=(bus&&) = delete;
-    ~bus() = delete;
+  bus() = delete;
+  bus(bus&&) = delete;
+  bus operator=(bus&&) = delete;
+  ~bus() = delete;
 
-    static void write(u16 addr, u8 data);
-    static u8 read(u16 addr);
+  static void write(u16 addr, u8 data);
+  static u8 read(u16 addr);
 
-    static void reset();
-    static void insertCartridge();
+  static void reset();
+  static void insertCartridge();
 private:
-    static mem memory;
+  static mem memory;
 };
 
 #endif // _BUS_HPP_
